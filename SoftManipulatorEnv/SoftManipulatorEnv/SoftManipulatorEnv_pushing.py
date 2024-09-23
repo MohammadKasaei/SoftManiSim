@@ -209,15 +209,11 @@ def make_env(env_id, rank, seed=0):
 
 if __name__ =="__main__":
     
-    num_cpu_core = 1
+    Train = False
+    num_cpu_core = 60 if Train else 1    
     max_epc = 500000
     
-    # from gym.envs.registration import register
-    # register(
-    #     id='SoftManipulatorEnv-v0',
-    #     entry_point='custom_env:SoftManipulatorEnv',
-    # )
-
+    
     if (num_cpu_core == 1):
         sf_env = SoftManipulatorEnv()
     else:
@@ -229,48 +225,49 @@ if __name__ =="__main__":
     model = SAC("MlpPolicy", sf_env, verbose=1, tensorboard_log=logdir)
 
     # model.load("logs/learnedPolicies/model_20240603-012421.zip")
-    
-    
-    model.learn(total_timesteps=max_epc,log_interval=10)
-    timestr   = time.strftime("%Y%m%d-%H%M%S")
-    modelName = "logs/learnedPolicies/model_"+ timestr
-    model.save(modelName)
-    sf_env.close()
-    print(f"finished. The model saved at {modelName}")
-    
-    
+    if Train:
         
-    # # model = SAC.load("logs/learnedPolicies/model_20240603-085205.zip", env = sf_env)
-    # model = SAC.load("logs/learnedPolicies/model_20240605-070914", env = sf_env)
-
-    
-    # obs = sf_env.reset()
-    # timesteps = 5000
-    # for i in range(timesteps):
-    #     action, _states = model.predict(obs, deterministic=True)
-    #     obs, reward, done, info = sf_env.step(action)
-    #     #callback_on_best = StopTrainingOnRewardThreshold(reward_threshold=-99.0, verbose=1)
-    #     #eval_callback = EvalCallback(env, callback_on_new_best=callback_on_best, verbose=1)
-    #     if done:
-    #         time.sleep(1)
-            
-    #         obs = sf_env.reset()
-    #         time.sleep(0.1)
-    #         sf_env._env._dummy_sim_step(1)
-
-    # obs = sf_env.reset()
-    # timesteps = 5000000
-    # for i in range(timesteps):
-    #     t = i*0.005
-    #     sf1_seg1_cable_1   = .005*np.sin(0.05*np.pi*t)
-    #     obs, reward, done, info = sf_env.step(np.array([sf1_seg1_cable_1,0.0,0.01,0.0,0.002,0.0,0.0,0.0,0.0,0.0,0.0]))
+        model.learn(total_timesteps=max_epc,log_interval=10)
+        timestr   = time.strftime("%Y%m%d-%H%M%S")
+        modelName = "logs/learnedPolicies/model_"+ timestr
+        model.save(modelName)
+        sf_env.close()
+        print(f"finished. The model saved at {modelName}")
         
-    #     #callback_on_best = StopTrainingOnRewardThreshold(reward_threshold=-99.0, verbose=1)
-    #     #eval_callback = EvalCallback(env, callback_on_new_best=callback_on_best, verbose=1)
-    #     # if done:
-    #     #     time.sleep(1)
+    else:
             
-    #         # obs = sf_env.reset()
-    #         # time.sleep(0.1)
-    #         # sf_env._env._dummy_sim_step(1)
+        # model = SAC.load("logs/learnedPolicies/model_20240603-085205.zip", env = sf_env)
+        model = SAC.load("learnedPolicies/model_20240605-070914", env = sf_env)
+        
+
+        
+        obs = sf_env.reset()
+        timesteps = 5000
+        for i in range(timesteps):
+            action, _states = model.predict(obs, deterministic=True)
+            obs, reward, done, info = sf_env.step(action)
+            #callback_on_best = StopTrainingOnRewardThreshold(reward_threshold=-99.0, verbose=1)
+            #eval_callback = EvalCallback(env, callback_on_new_best=callback_on_best, verbose=1)
+            if done:
+                time.sleep(1)
+                
+                obs = sf_env.reset()
+                time.sleep(0.1)
+                sf_env._env._dummy_sim_step(1)
+
+        obs = sf_env.reset()
+        timesteps = 5000000
+        for i in range(timesteps):
+            t = i*0.005
+            sf1_seg1_cable_1   = .005*np.sin(0.05*np.pi*t)
+            obs, reward, done, info = sf_env.step(np.array([sf1_seg1_cable_1,0.0,0.01,0.0,0.002,0.0,0.0,0.0,0.0,0.0,0.0]))
+            
+            #callback_on_best = StopTrainingOnRewardThreshold(reward_threshold=-99.0, verbose=1)
+            #eval_callback = EvalCallback(env, callback_on_new_best=callback_on_best, verbose=1)
+            # if done:
+            #     time.sleep(1)
+                
+                # obs = sf_env.reset()
+                # time.sleep(0.1)
+                # sf_env._env._dummy_sim_step(1)
 

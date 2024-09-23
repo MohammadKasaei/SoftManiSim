@@ -154,7 +154,7 @@ def make_env(env_id, rank, seed=0):
 if __name__ =="__main__":
     
 
-    Train = True
+    Train = False
     num_cpu_core = 60 if Train else 1    
     max_epc = 2000000
     
@@ -180,7 +180,7 @@ if __name__ =="__main__":
         print(f"finished. The model saved at {modelName}")
         
     else:            
-        model = SAC.load("logs/learnedPolicies/model_20240609-013942_Best_SAC_Reacher_obs", env = sf_env) # 2M best 
+        model = SAC.load("learnedPolicies/model_20240609-013942_Best_SAC_Reacher_obs", env = sf_env) # 2M best 
         
         obs = sf_env.reset()
         timesteps = 100

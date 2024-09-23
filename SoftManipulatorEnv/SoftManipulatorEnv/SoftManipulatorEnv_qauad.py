@@ -269,7 +269,7 @@ if __name__ =="__main__":
         
     else:
             
-        model = SAC.load("logs/learnedPolicies/model_20240611-225749_best_quad", env = sf_env)         
+        model = SAC.load("learnedPolicies/model_20240611-225749_best_quad", env = sf_env)         
         obs = sf_env.reset()
         timesteps = 50
         for i in range(timesteps):

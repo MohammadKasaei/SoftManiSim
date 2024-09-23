@@ -30,6 +30,46 @@
             "module": "scripts.BasicTest_manipulator_single_tele_op"
         },
 
+        {
+            "name": "Gym env-push",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "SoftManipulatorEnv.SoftManipulatorEnv.SoftManipulatorEnv_pushing"
+        },
+        {
+            "name": "Gym control policy",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "SoftManipulatorEnv.SoftManipulatorEnv.SoftManipulatorEnv_control_policy"
+        },
+        {
+            "name": "Gym reacher",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "SoftManipulatorEnv.SoftManipulatorEnv.SoftManipulatorEnv_reacher"
+        },
+        
+        {
+            "name": "Gym reacher obs",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "SoftManipulatorEnv.SoftManipulatorEnv.SoftManipulatorEnv_reacher_obs"
+        },
+        
+        {
+            "name": "Gym env quad",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "SoftManipulatorEnv.SoftManipulatorEnv.SoftManipulatorEnv_qauad"
+        },
+   
+        {
+            "name": "Gym env",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "SoftManipulatorEnv.SoftManipulatorEnv.SoftManipulatorEnv"
+        },
+
         
     ]
 }
