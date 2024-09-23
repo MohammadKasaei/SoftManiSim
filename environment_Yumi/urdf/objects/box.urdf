@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<robot name="box">
+
+  <link name="main_surf">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.0"/>
+      <mass value="0.2"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.29 0.35 0.005" />
+      </geometry>
+      <material name="black">
+        <color rgba="0. 0. 0. 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.29 0.35 0.005" />
+      </geometry>
+    </collision>
+  </link>
+
+
+<joint name="edge1" type="fixed">    
+    <origin rpy="0 0 3.14159265359" xyz="0 0.175 0.1"/>    
+    <parent link="main_surf"/>
+    <child link="edge_1"/>
+  </joint>
+  <link name="edge_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.00"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.29 0.01 0.2" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.65 0.65 0.65 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.29 0.01 0.2" />
+      </geometry>
+    </collision>
+  </link>
+
+<joint name="edge2" type="fixed">    
+    <origin rpy="0 0 3.14159265359" xyz="0 -0.175 0.1"/>    
+    <parent link="main_surf"/>
+    <child link="edge_2"/>
+  </joint>
+  <link name="edge_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.00"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.29 0.01 0.2" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.65 0.65 0.65 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.29 0.01 0.2" />
+      </geometry>
+    </collision>
+  </link>
+
+<joint name="edge3" type="fixed">    
+    <origin rpy="0 0 3.14159265359" xyz="-0.145 -0. 0.1"/>    
+    <parent link="main_surf"/>
+    <child link="edge_3"/>
+  </joint>
+  <link name="edge_3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.35 0.2" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.65 0.65 0.65 1.0"/>
+      </material>
+
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.35 0.2" />
+      </geometry>
+    </collision>
+  </link>
+
+
+<joint name="edge4" type="fixed">    
+    <origin rpy="0 0 -3.14159265359" xyz="0.145 -0. 0.1"/>    
+    <parent link="main_surf"/>
+    <child link="edge_4"/>
+  </joint>
+  <link name="edge_4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.35 0.2" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.65 0.65 0.65 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.35 0.2" />
+      </geometry>
+    </collision>
+  </link>
+
+
+</robot>

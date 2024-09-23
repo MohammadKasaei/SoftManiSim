@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+       
+        {
+            "name": "basic manipulator-two robots",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "scripts.BasicTest_manipulator_two_robot"
+        },
+        {
+            "name": "basic manipulator-Single robots",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "scripts.BasicTest_manipulator_single"
+        },
+        {
+            "name": "basic manipulator-Single robots PD_control",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "scripts.BasicTest_manipulator_single_PD_control"
+        },
+        {
+            "name": "basic manipulator-Single robots tele op",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "scripts.BasicTest_manipulator_single_tele_op"
+        },
+
+        
+    ]
+}

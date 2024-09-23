@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="spotmicro_proprio_dachshund">
+  <link
+    name="chassis">
+    <inertial>
+      <origin
+        xyz="-0.000444600921558843 0.000287035760745392 6.23058949931363E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.848139055477732" />
+      <inertia
+        ixx="0.00115729109760246"
+        ixy="-2.77581352782367E-07"
+        ixz="7.59736388428773E-08"
+        iyy="0.00153951399577208"
+        iyz="-1.06489455875917E-08"
+        izz="0.000992911865253475" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="FR_hip">
+    <inertial>
+      <origin
+        xyz="-0.0032526 -0.0094319 0.019337"
+        rpy="0 0 0" />
+      <mass
+        value="0.10477" />
+      <inertia
+        ixx="2.9556E-05"
+        ixy="-1.6557E-06"
+        ixz="2.1529E-11"
+        iyy="1.7077E-05"
+        iyz="-3.5945E-08"
+        izz="2.6993E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/FR_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/FR_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_hip_roll"
+    type="revolute">
+    <origin
+      xyz="0.081 -0.039 0.009"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="chassis" />
+    <child
+      link="FR_hip" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="FR_upper_leg">
+    <inertial>
+      <origin
+        xyz="9.18425058227257E-12 -0.036 0.0234"
+        rpy="0 0 0" />
+      <mass
+        value="0.173846444847994" />
+      <inertia
+        ixx="4.56794137444571E-05"
+        ixy="-5.35217851199059E-22"
+        ixz="-1.01799735917628E-21"
+        iyy="2.70865709884967E-05"
+        iyz="7.59367774240571E-08"
+        izz="4.06256023463801E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/FR_upper_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/FR_upper_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_hip_pitch"
+    type="revolute">
+    <origin
+      xyz="-0.0226 0 0.019"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="FR_hip" />
+    <child
+      link="FR_upper_leg" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="FR_lower_leg">
+    <inertial>
+      <origin
+        xyz="-0.0235112982977331 -0.0333337125043985 -3.67222933450595E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0384832088212245" />
+      <inertia
+        ixx="1.18130728149393E-05"
+        ixy="-1.15124771925603E-06"
+        ixz="1.90278127708948E-13"
+        iyy="3.33530357119838E-06"
+        iyz="7.19926265841221E-12"
+        izz="1.27532358869645E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/FR_lower_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/FR_lower_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_knee_pitch"
+    type="revolute">
+    <origin
+      xyz="0 -0.072 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="FR_upper_leg" />
+    <child
+      link="FR_lower_leg" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="FL_hip">
+    <inertial>
+      <origin
+        xyz="0.00325258361311268 -0.00943189564323483 0.01933695515458"
+        rpy="0 0 0" />
+      <mass
+        value="0.104770220532977" />
+      <inertia
+        ixx="2.95563074359675E-05"
+        ixy="1.65571747194463E-06"
+        ixz="2.15606215402607E-11"
+        iyy="1.70767674556504E-05"
+        iyz="-3.59947414731157E-08"
+        izz="2.69927745038649E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/FL_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/FL_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_hip_roll"
+    type="revolute">
+    <origin
+      xyz="0.081 0.039 0.009"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="chassis" />
+    <child
+      link="FL_hip" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="FL_upper_leg">
+    <inertial>
+      <origin
+        xyz="9.18498610502638E-12 -0.0359999999999987 0.0234000000000002"
+        rpy="0 0 0" />
+      <mass
+        value="0.173846444847994" />
+      <inertia
+        ixx="4.56794137444571E-05"
+        ixy="-3.44811133722202E-22"
+        ixz="-3.25230551041641E-20"
+        iyy="2.70865709884967E-05"
+        iyz="7.59367774240549E-08"
+        izz="4.06256023463801E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/FL_upper_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/FL_upper_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_hip_pitch"
+    type="revolute">
+    <origin
+      xyz="0.0226 0 0.019"
+      rpy="0 1.5708 0" />
+    <parent
+      link="FL_hip" />
+    <child
+      link="FL_upper_leg" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="FL_lower_leg">
+    <inertial>
+      <origin
+        xyz="0.0232887017022664 -0.0333337125043985 -3.67222952046831E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0384832088212245" />
+      <inertia
+        ixx="1.18130728149393E-05"
+        ixy="-1.15124771925602E-06"
+        ixz="1.90278127181665E-13"
+        iyy="3.33530357119839E-06"
+        iyz="7.1992626591154E-12"
+        izz="1.27532358869645E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/FL_lower_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/FL_lower_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_knee_pitch"
+    type="revolute">
+    <origin
+      xyz="0 -0.072 0"
+      rpy="3.1416 -1.5708 3.1416" />
+    <parent
+      link="FL_upper_leg" />
+    <child
+      link="FL_lower_leg" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="RR_hip">
+    <inertial>
+      <origin
+        xyz="-0.00325258370059503 -0.00943187135449414 -0.0230630580319289"
+        rpy="0 0 0" />
+      <mass
+        value="0.104770220532571" />
+      <inertia
+        ixx="2.95563074929317E-05"
+        ixy="-1.6557172171637E-06"
+        ixz="2.15288051061514E-11"
+        iyy="1.70767673986578E-05"
+        iyz="-3.59453433045113E-08"
+        izz="2.6992774503836E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/RR_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/RR_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_hip_roll"
+    type="revolute">
+    <origin
+      xyz="-0.0766 -0.039 0.009"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="chassis" />
+    <child
+      link="RR_hip" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="RR_upper_leg">
+    <inertial>
+      <origin
+        xyz="9.18422282669695E-12 -0.0360000000000013 0.0234"
+        rpy="0 0 0" />
+      <mass
+        value="0.173846444847994" />
+      <inertia
+        ixx="4.56794137444571E-05"
+        ixy="3.19353178284792E-22"
+        ixz="-2.34431263083692E-21"
+        iyy="2.70865709884967E-05"
+        iyz="7.59367774240538E-08"
+        izz="4.06256023463801E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/RR_upper_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/RR_upper_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_hip_pitch"
+    type="revolute">
+    <origin
+      xyz="-0.0226 0 -0.0234"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="RR_hip" />
+    <child
+      link="RR_upper_leg" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="RR_lower_leg">
+    <inertial>
+      <origin
+        xyz="-0.0230112982977352 -0.0333337125043986 -3.67222933450595E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0384832088212245" />
+      <inertia
+        ixx="1.18130728149393E-05"
+        ixy="-1.15124771925602E-06"
+        ixz="1.90278127470108E-13"
+        iyy="3.33530357119838E-06"
+        iyz="7.19926265914702E-12"
+        izz="1.27532358869645E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/RR_lower_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/RR_lower_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_knee_pitch"
+    type="revolute">
+    <origin
+      xyz="0 -0.072 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="RR_upper_leg" />
+    <child
+      link="RR_lower_leg" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="RL_hip">
+    <inertial>
+      <origin
+        xyz="0.0032525836861711 -0.00943189569919298 -0.0230630448850034"
+        rpy="0 0 0" />
+      <mass
+        value="0.104770220532977" />
+      <inertia
+        ixx="2.95563074929387E-05"
+        ixy="1.6557172568059E-06"
+        ixz="2.15288045741106E-11"
+        iyy="1.70767673986798E-05"
+        iyz="-3.59947616232585E-08"
+        izz="2.69927745038645E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/RL_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/RL_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_hip_roll"
+    type="revolute">
+    <origin
+      xyz="-0.0766 0.039 0.009"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="chassis" />
+    <child
+      link="RL_hip" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="RL_upper_leg">
+    <inertial>
+      <origin
+        xyz="9.18497222723857E-12 -0.036 0.0234000000000002"
+        rpy="0 0 0" />
+      <mass
+        value="0.173846444847994" />
+      <inertia
+        ixx="4.56794137444571E-05"
+        ixy="-2.09651104332113E-21"
+        ixz="-3.2250697981248E-20"
+        iyy="2.70865709884967E-05"
+        iyz="7.59367774240569E-08"
+        izz="4.06256023463801E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/RL_upper_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/RL_upper_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_hip_pitch"
+    type="revolute">
+    <origin
+      xyz="0.0226 0 -0.0234"
+      rpy="0 1.5708 0" />
+    <parent
+      link="RL_hip" />
+    <child
+      link="RL_upper_leg" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="RL_lower_leg">
+    <inertial>
+      <origin
+        xyz="0.0232887017022658 -0.0333337125043986 -3.67222951908053E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0384832088212245" />
+      <inertia
+        ixx="1.18130728149393E-05"
+        ixy="-1.15124771925602E-06"
+        ixz="1.90278125802396E-13"
+        iyy="3.33530357119839E-06"
+        iyz="7.19926265951136E-12"
+        izz="1.27532358869645E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/RL_lower_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_dachshund/meshes/RL_lower_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_knee_pitch"
+    type="revolute">
+    <origin
+      xyz="0 -0.072 0"
+      rpy="3.1416 -1.5708 3.1416" />
+    <parent
+      link="RL_upper_leg" />
+    <child
+      link="RL_lower_leg" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+</robot>

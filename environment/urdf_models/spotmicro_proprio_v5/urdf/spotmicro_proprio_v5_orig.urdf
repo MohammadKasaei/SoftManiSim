@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="spotmicro_proprio_v5">
+  <link
+    name="chassis">
+    <inertial>
+      <origin
+        xyz="-0.0004446 -6.2306E-06 0.00028704"
+        rpy="0 0 0" />
+      <mass
+        value="0.84814" />
+      <inertia
+        ixx="0.0011573"
+        ixy="-7.5974E-08"
+        ixz="-2.7758E-07"
+        iyy="0.00099291"
+        iyz="1.0649E-08"
+        izz="0.0015395" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="FR_hip">
+    <inertial>
+      <origin
+        xyz="-0.0032526 -0.0094319 0.019337"
+        rpy="0 0 0" />
+      <mass
+        value="0.10477" />
+      <inertia
+        ixx="2.9556E-05"
+        ixy="-1.6557E-06"
+        ixz="2.1529E-11"
+        iyy="1.7077E-05"
+        iyz="-3.5945E-08"
+        izz="2.6993E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/FR_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/FR_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_hip_roll"
+    type="revolute">
+    <origin
+      xyz="0.081 -0.039 0.009"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="chassis" />
+    <child
+      link="FR_hip" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="FR_upper_leg">
+    <inertial>
+      <origin
+        xyz="1.19898674322272E-11 -0.0589999999892911 0.0234492015158459"
+        rpy="0 0 0" />
+      <mass
+        value="0.186407498655757" />
+      <inertia
+        ixx="5.87035326015844E-05"
+        ixy="1.99926341478042E-14"
+        ixz="1.81354376032622E-14"
+        iyy="3.64527307900986E-05"
+        iyz="6.79432986779939E-08"
+        izz="5.00787101141682E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/FR_upper_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/FR_upper_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_hip_pitch"
+    type="revolute">
+    <origin
+      xyz="-0.0226 0 0.019"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="FR_hip" />
+    <child
+      link="FR_upper_leg" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="FR_lower_leg">
+    <inertial>
+      <origin
+        xyz="0.0237537809269848 0.0523651689541875 1.05791522791998E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0514314796513697" />
+      <inertia
+        ixx="3.95073753491517E-05"
+        ixy="4.88497364958468E-06"
+        ixz="-1.65219951715732E-11"
+        iyy="4.30274202211496E-06"
+        iyz="1.46673398826226E-10"
+        izz="4.10006869878226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/FR_lower_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/FR_lower_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_knee_pitch"
+    type="revolute">
+    <origin
+      xyz="0 -0.118 0"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="FR_upper_leg" />
+    <child
+      link="FR_lower_leg" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="FL_hip">
+    <inertial>
+      <origin
+        xyz="0.0032526 -0.0094319 0.019337"
+        rpy="0 0 0" />
+      <mass
+        value="0.10477" />
+      <inertia
+        ixx="2.9556E-05"
+        ixy="1.6557E-06"
+        ixz="2.1561E-11"
+        iyy="1.7077E-05"
+        iyz="-3.5995E-08"
+        izz="2.6993E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/FL_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/FL_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_hip_roll"
+    type="revolute">
+    <origin
+      xyz="0.081 0.039 0.009"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="chassis" />
+    <child
+      link="FL_hip" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="FL_upper_leg">
+    <inertial>
+      <origin
+        xyz="1.19906307105566E-11 -0.0589999999892912 0.0234492015158475"
+        rpy="0 0 0" />
+      <mass
+        value="0.186407498655757" />
+      <inertia
+        ixx="5.87035326015845E-05"
+        ixy="1.99926211632493E-14"
+        ixz="1.81353886457592E-14"
+        iyy="3.64527307900987E-05"
+        iyz="6.7943298678007E-08"
+        izz="5.00787101141683E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/FL_upper_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/FL_upper_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_hip_pitch"
+    type="revolute">
+    <origin
+      xyz="0.0226 0 0.019"
+      rpy="0 1.5708 0" />
+    <parent
+      link="FL_hip" />
+    <child
+      link="FL_upper_leg" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="FL_lower_leg">
+    <inertial>
+      <origin
+        xyz="0.0232537809269858 -0.0523651689541877 -1.0579152302792E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0514314796513697" />
+      <inertia
+        ixx="3.95073753491516E-05"
+        ixy="-4.88497364958502E-06"
+        ixz="1.65219951847629E-11"
+        iyy="4.30274202211505E-06"
+        iyz="1.46673398866322E-10"
+        izz="4.10006869878226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/FL_lower_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/FL_lower_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_knee_pitch"
+    type="revolute">
+    <origin
+      xyz="0 -0.118 0"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="FL_upper_leg" />
+    <child
+      link="FL_lower_leg" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="RR_hip">
+    <inertial>
+      <origin
+        xyz="-0.0032526 -0.0094319 -0.023063"
+        rpy="0 0 0" />
+      <mass
+        value="0.10477" />
+      <inertia
+        ixx="2.9556E-05"
+        ixy="-1.6557E-06"
+        ixz="2.1529E-11"
+        iyy="1.7077E-05"
+        iyz="-3.5945E-08"
+        izz="2.6993E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/RR_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/RR_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_hip_roll"
+    type="revolute">
+    <origin
+      xyz="-0.0766 -0.039 0.009"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="chassis" />
+    <child
+      link="RR_hip" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="RR_upper_leg">
+    <inertial>
+      <origin
+        xyz="1.19898951878028E-11 -0.0589999999892923 0.023449201515846"
+        rpy="0 0 0" />
+      <mass
+        value="0.186407498655757" />
+      <inertia
+        ixx="5.87035326015845E-05"
+        ixy="1.99926242905013E-14"
+        ixz="1.81354443822145E-14"
+        iyy="3.64527307900987E-05"
+        iyz="6.79432986779969E-08"
+        izz="5.00787101141683E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/RR_upper_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/RR_upper_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_hip_pitch"
+    type="revolute">
+    <origin
+      xyz="-0.0226 0 -0.0234"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="RR_hip" />
+    <child
+      link="RR_upper_leg" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="RR_lower_leg">
+    <inertial>
+      <origin
+        xyz="0.0237537809269848 0.0523651689541875 1.0579152277812E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0514314796513697" />
+      <inertia
+        ixx="3.95073753491517E-05"
+        ixy="4.88497364958468E-06"
+        ixz="-1.65219951719277E-11"
+        iyy="4.30274202211496E-06"
+        iyz="1.46673398821205E-10"
+        izz="4.10006869878226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/RR_lower_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/RR_lower_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_knee_pitch"
+    type="revolute">
+    <origin
+      xyz="0 -0.118 0"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="RR_upper_leg" />
+    <child
+      link="RR_lower_leg" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="RL_hip">
+    <inertial>
+      <origin
+        xyz="0.0032526 -0.0094319 -0.023063"
+        rpy="0 0 0" />
+      <mass
+        value="0.10477" />
+      <inertia
+        ixx="2.9556E-05"
+        ixy="1.6557E-06"
+        ixz="2.1529E-11"
+        iyy="1.7077E-05"
+        iyz="-3.5995E-08"
+        izz="2.6993E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/RL_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/RL_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_hip_roll"
+    type="revolute">
+    <origin
+      xyz="-0.0766 0.039 0.009"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="chassis" />
+    <child
+      link="RL_hip" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="RL_upper_leg">
+    <inertial>
+      <origin
+        xyz="1.19905613216176E-11 -0.0589999999892911 0.0234492015158476"
+        rpy="0 0 0" />
+      <mass
+        value="0.186407498655757" />
+      <inertia
+        ixx="5.87035326015845E-05"
+        ixy="1.99926203604365E-14"
+        ixz="1.81354103273646E-14"
+        iyy="3.64527307900987E-05"
+        iyz="6.79432986779987E-08"
+        izz="5.00787101141684E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/RL_upper_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/RL_upper_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_hip_pitch"
+    type="revolute">
+    <origin
+      xyz="0.0226 0 -0.0234"
+      rpy="0 1.5708 0" />
+    <parent
+      link="RL_hip" />
+    <child
+      link="RL_upper_leg" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+  <link
+    name="RL_lower_leg">
+    <inertial>
+      <origin
+        xyz="0.0232537809269859 -0.0523651689541877 -1.05791522944654E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0514314796513697" />
+      <inertia
+        ixx="3.95073753491516E-05"
+        ixy="-4.88497364958502E-06"
+        ixz="1.65219951823521E-11"
+        iyy="4.30274202211505E-06"
+        iyz="1.46673398858172E-10"
+        izz="4.10006869878226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/RL_lower_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://spotmicro_proprio_v5/meshes/RL_lower_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_knee_pitch"
+    type="revolute">
+    <origin
+      xyz="0 -0.118 0"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="RL_upper_leg" />
+    <child
+      link="RL_lower_leg" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="3"
+      velocity="8" />
+  </joint>
+</robot>
