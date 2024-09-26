@@ -38,7 +38,7 @@ The `scripts` folder contains several example scripts to help you get started. Y
 ```bash
 python3 -m scripts.SCRIPT_NAME
 ```
-For example, to run the `BasicTest_manipulator_two_robot script`, use:
+For example, to run the `BasicTest_manipulator_two_robot`, use:
 
 ```bash
 python3 -m scripts.BasicTest_manipulator_two_robot script
