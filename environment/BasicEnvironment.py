@@ -7,7 +7,6 @@ import cv2
 import random
 
 from collections import namedtuple
-from operator import methodcaller
 
 from environment.camera.camera import Camera
 from PIL import Image

@@ -4,5 +4,30 @@ SoftManiSim is an advanced, open-source simulation framework designed for multi-
 
 
 
+# Installation and Setup
+
+## Clone the Repository:
+
+```
+git clone git@github.com:MohammadKasaei/SoftManiSim.git
+cd SoftManiSim
+```
+## Set Up a Virtual Environment (optional):
+
+```
+python -m venv env
+source env/bin/activate  # On Windows use `env\Scripts\activate`
+```
+## Install Dependencies:
+Before running the script, make sure you have execute permissions. Run the following command:
+```
+chmod +x install_dependencies.sh
+```
+To install all the dependencies, simply run:
+```
+./install_dependencies.sh
+```
+Wait for the script to complete. Once done, all the required dependencies should be installed in your environment.
+
 
 
