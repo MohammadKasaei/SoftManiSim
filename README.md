@@ -30,6 +30,35 @@ To install all the dependencies, simply run:
 Wait for the script to complete. Once done, all the required dependencies should be installed in your environment.
 
 
+### Running Example Scripts
+
+The `scripts` folder contains several example scripts to help you get started. You can run any of these scripts using the following command:
+
+```bash
+python3 -m scripts.SCRIPT_NAME
+```
+For example, to run the `BasicTest_manipulator_two_robot script`, use:
+
+```bash
+python3 -m scripts.BasicTest_manipulator_two_robot script
+```
+
+Additionally, we have developed a set of Gym Environment, for more detail check the `SoftManipulatorEnv/SoftManipulatorEnv` folder.
+
+
+### Running Example Scripts
+There are several example scripts in the scripts folder and you can run them using the following command:
+```
+python3 -m scripts.SCRIPTS_NAME
+```
+
+for example:
+```
+python3 -m scripts.BasicTest_manipulator_two_robot
+```
+
+
+
 ### API Documentation
 
 Below is the API documentation for the `SoftManiSim` class, detailing its essential methods, their arguments, and functionalities:
