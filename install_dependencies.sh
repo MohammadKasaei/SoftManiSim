@@ -4,8 +4,10 @@
 set -e
 
 # Install numpy, scipy, matplotlib and collection
-pip install numpy scipy matplotlib collection
-
+pip install numpy==1.26.3
+pip install scipy==1.11.4
+pip install matplotlib==3.8.2
+pip install collection
 
 # Install pybullet
 pip install pybullet
