@@ -46,18 +46,6 @@ python3 -m scripts.BasicTest_manipulator_two_robot script
 Additionally, we have developed a set of Gym Environment, for more detail check the `SoftManipulatorEnv/SoftManipulatorEnv` folder.
 
 
-### Running Example Scripts
-There are several example scripts in the scripts folder and you can run them using the following command:
-```
-python3 -m scripts.SCRIPTS_NAME
-```
-
-for example:
-```
-python3 -m scripts.BasicTest_manipulator_two_robot
-```
-
-
 
 ### API Documentation
 
