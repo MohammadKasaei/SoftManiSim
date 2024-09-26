@@ -41,7 +41,7 @@ python3 -m scripts.SCRIPT_NAME
 For example, to run the `BasicTest_manipulator_two_robot`, use:
 
 ```bash
-python3 -m scripts.BasicTest_manipulator_two_robot script
+python3 -m scripts.BasicTest_manipulator_two_robot
 ```
 
 Additionally, we have developed a set of Gym Environment, for more detail check the `SoftManipulatorEnv/SoftManipulatorEnv` folder.
